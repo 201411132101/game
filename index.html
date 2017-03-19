@@ -1,0 +1,50 @@
+﻿<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN"
+"http://www.w3.org/TR/html4/loose.dtd">
+<html>
+
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<meta name="toTop" content="true">
+
+<title>My Game</title>
+
+<link rel="shortcut icon" href="https://201411132101.github.io/bufan/favicon.ico">
+
+<!--css-->
+<link href="css/style.css" rel="stylesheet" type="text/css" />
+<style type="text/css">
+body { 
+	background-image:url(images/bg-main.jpg);
+	background-color:black;
+}
+</style>
+
+<!--js-->
+<script type="text/javascript" src="https://201411132101.github.io/bufan/js/jquery.min.js"></script>
+<script type="text/javascript" src="https://201411132101.github.io/bufan/js/snow-plugin.js"></script> 
+<script type="text/javascript" src="https://201411132101.github.io/bufan/js/toTop.js"></script>
+</head>
+
+<body>
+
+
+<div id="left">
+	<div id="subtitle2"><a href="gobang/index.html">Gobang</a></div>
+</div>
+
+
+<!--snow -->
+<canvas class="snow-canvas" speed="1" interaction="false" size="2" count="80" opacity="0.00001" start-color="rgba(253,252,251,1)" 
+end-color="rgba(251,252,253,0.3)" wind-power="0" image="false" width="1366" height="667"></canvas>
+ 
+<canvas class="snow-canvas" speed="2" interaction="true" size="6" count="30" start-color="rgba(253,252,251,1)" 
+end-color="rgba(251,252,253,0.3)" opacity="0.00001" wind-power="2" image="false" width="1366" height="667"></canvas>
+ 
+<canvas class="snow-canvas" speed="3" interaction="true" size="12" count="20" wind-power="-5"
+image="https://201411132101.github.io/bufan/images/snow.png" width="1366" height="667"></canvas> 
+<script type="text/javascript">
+$(".snow-canvas").snow();
+</script>
+</body>
+
+</html>

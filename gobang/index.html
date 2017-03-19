@@ -7,16 +7,17 @@
 
 <title>Gobang</title>
 <link rel="shortcut icon" href="https://201411132101.github.io/bufan/favicon.ico">
-<link href="style.css" rel="stylesheet" type="text/css" />
+<link href="css/style.css" rel="stylesheet" type="text/css" />
 </head>
 
 <body>
 <div id="container">
-	<div id="leftbar">
+	<div id="leftbar" align="center">
+		<p>It's your turn</p>
+		<img src="images/black.png" width="60" id="sign" />
 	</div>
-	<canvas width="600" id="chessboard" onmousemove="preview(event)" height="600"></canvas>
-	<div id="rightbar">
-	</div>
+	<canvas width="600" height="600" id="chessboard" onclick="update(event)"></canvas>
+	<div id="rightbar" align="center"></div>
 </div>
 
 <!--js-->
