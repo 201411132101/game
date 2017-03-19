@@ -51,7 +51,7 @@ function judge(x, y)
 		if (chessboard[i][y] != chessboard[x][y]) break;
 		sum = sum + 1;
 	}
-	if (sum == 5) return true;
+	if (sum >= 5) return true;
 	
 	// 列
 	sum = 0;
@@ -63,7 +63,7 @@ function judge(x, y)
 		if (chessboard[x][i] != chessboard[x][y]) break;
 		sum = sum + 1;
 	}
-	if (sum == 5) return true;
+	if (sum >= 5) return true;
 	
 	// 左上
 	sum = 0;
@@ -75,7 +75,7 @@ function judge(x, y)
 		if (chessboard[x+i][y+i] != chessboard[x][y]) break;
 		sum = sum + 1;
 	}
-	if (sum == 5) return true;
+	if (sum >= 5) return true;
 	
 	// 右上
 	sum = 0;
@@ -87,7 +87,7 @@ function judge(x, y)
 		if (chessboard[x+i][y-i] != chessboard[x][y]) break;
 		sum = sum + 1;
 	}
-	if (sum == 5) return true;
+	if (sum >= 5) return true;
 	
 	return false;
 }
