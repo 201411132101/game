@@ -14,15 +14,24 @@
 <div id="container">
 	<div id="leftbar" align="center">
 		<p>It's your turn</p>
-		<img src="images/black.png" width="60" id="sign" />
-		<p>默认人机对战</p>
-		<p>双人模式太无趣</p>
+		<img src="images/black.png" width="60" id="black" />
+		<img src="images/white.png" width="60" id="white" hidden/>
+		<p>默认单人模式</p>
+		<p>AI才是最好玩的</p>
+		
+		<button type="button" onclick="clearBoard()">重新开始</button>
+		<button type="button" onclick="modeChoose(1)">单人模式</button>
+		<button type="button" onclick="modeChoose(2)">双人模式</button>
 	</div>
-	<canvas width="600" height="600" id="chessboard" onclick="update(event)"></canvas>
-	<div id="rightbar" align="center"></div>
+	<canvas width="600" height="600" id="board" onclick="update(event)"></canvas>
+	<div id="rightbar" align="center">
+		<p id="debug">debug</p>
+	</div>
 </div>
 
 <!--js-->
-<script type="text/javascript" src="js/chessboard.js"></script>
+<script type="text/javascript" src="js/board.js"></script>
+<script type="text/javascript" src="js/player.js"></script>
+<script type="text/javascript" src="js/AI.js"></script>
 </body>
 </html>
