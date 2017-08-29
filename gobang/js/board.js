@@ -7,6 +7,8 @@ var context = canvas.getContext('2d');
 var mode = 1;
 // 玩家属性：0为黑方，1为白方
 var player = 0;
+// 游戏是否结束
+var over = false;
 
 // 创建棋盘并初始化
 var board = new Array();
@@ -59,6 +61,7 @@ function clearBoard(){
 	players = 0;
 	black.removeAttribute("hidden");
 	white.setAttribute("hidden",true);
+	over = false;
 }
 // 模式选择
 function modeChoose(temp){

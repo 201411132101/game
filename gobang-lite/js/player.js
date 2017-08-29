@@ -1,10 +1,14 @@
+playChess(7, 7);
+
 // 画出所下棋子
 function draw_chess_piece(x, y, r){
 	context.beginPath();
+	context.arc(x,y,r,0,Math.PI*2,false);
 	if(player == 0)
-		context.drawImage(black,x-r,y-r,2*r,2*r);
+		context.fillStyle = 'black';
 	else
-		context.drawImage(white,x-r,y-r,2*r,2*r);
+		context.fillStyle = 'white';
+	context.fill();
 	context.closePath();
 }
 
@@ -73,16 +77,6 @@ function judge(x, y)
 		return false;
 }
 
-function show_res(){
-	console.log('res: %d\n', player);
-	over = true;
-	if (player == 0)
-		document.getElementById("debug").innerHTML = '黑方胜出';
-	else
-		document.getElementById("debug").innerHTML = '白方胜出';
-	console.log('happy');
-}
-
 // 更新玩家
 function playChess(nx, ny){
 	var r = 18;
@@ -91,23 +85,19 @@ function playChess(nx, ny){
 	draw_chess_piece(x, y, r);
 	board[nx][ny] = player;
 	
-	console.log('before: %d\n', player);
 	if (judge(nx, ny)){
-		show_res(); 
+		over = true;
+		document.getElementById("debug").innerHTML = '游戏结束'; 
 		return ;
 	}
-	console.log('after: %d\n', player);
 	
 	player = 1 - player;
-	if (player == 0){
-		black.removeAttribute("hidden");
-		white.setAttribute("hidden",true);
-	}
-	else{
-		black.setAttribute("hidden",true);
-		white.removeAttribute("hidden");
-	}
+	if (player == 0)
+		document.getElementById("color").innerHTML = '黑';
+	else
+		document.getElementById("color").innerHTML = '白';
 }
+
 function update(event){
 	if (over) return ;
 	
@@ -125,18 +115,13 @@ function update(event){
 	
 	playChess(nx, ny);
 	
-	if (mode == 1 && !over){
+	if (!over){
 		var plan = AI();
 		playChess(plan[0], plan[1]);
 	}
 	
 	// debug
-	var mat = "mode: ";
-	if (mode == 1)
-		mat += "单人模式" + "<br/>";
-	else
-		mat += "双人模式" + "<br/>";
-	mat += "board:<br/>";
+	var mat = "board:<br/>";
 	for (var i = 0; i < 15; i++){
 		for (var j = 0; j < 15; j++){
 			if (board[j][i] == 0)
