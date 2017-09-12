@@ -4,20 +4,21 @@ var canvas = document.getElementById("board");
 var context = canvas.getContext('2d');
 
 // 游戏模式：1为玩家执黑，2为玩家执白
-var mode = 1;
+var mode = 1
 // 玩家属性：0为黑方，1为白方
-var player = 0;
+var player = 1
 // 游戏是否结束
-var over = false;
+var over = false
 
 
 // 创建棋盘并初始化
 var board = new Array();
 for (var i = 0; i < 15; i++){
-	board[i] = new Array(); 
+	board[i] = new Array()
 	for (var j = 0; j < 15; j++)
-		board[i][j] = 999;
+		board[i][j] = 999
 }
+board[7][7] = 0
 updata_board();
 
 
