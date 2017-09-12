@@ -6,7 +6,7 @@
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
 
 <title>Gobang</title>
-<link rel="shortcut icon" href="https://201411132101.github.io/bufan/favicon.ico">
+<link rel="shortcut icon" href="https://bufan.xyz/favicon.ico">
 <link href="css/style.css" rel="stylesheet" type="text/css" />
 </head>
 
@@ -16,12 +16,13 @@
 		<p>It's your turn</p>
 		<img src="images/black.png" width="60" id="black" />
 		<img src="images/white.png" width="60" id="white" hidden/>
-		<p>默认单人模式</p>
+		<p>只有人机对战模式</p>
+		<p>默认玩家执黑</p>
 		<p>AI才是最好玩的</p>
 		
 		<button type="button" onclick="clearBoard()">重新开始</button>
-		<button type="button" onclick="modeChoose(1)">单人模式</button>
-		<button type="button" onclick="modeChoose(2)">双人模式</button>
+		<button type="button" onclick="modeChoose(1)">玩家执黑</button>
+		<button type="button" onclick="modeChoose(2)">玩家执白</button>
 	</div>
 	<canvas width="600" height="600" id="board" onclick="update(event)"></canvas>
 	<div id="rightbar" align="center">
@@ -30,6 +31,7 @@
 </div>
 
 <!--js-->
+<script type="text/javascript" src="http://libs.baidu.com/jquery/2.0.0/jquery.js"></script>
 <script type="text/javascript" src="js/board.js"></script>
 <script type="text/javascript" src="js/player.js"></script>
 <script type="text/javascript" src="js/AI.js"></script>
