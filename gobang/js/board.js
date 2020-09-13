@@ -19,6 +19,7 @@ for (var i = 0; i < 15; i++){
 		board[i][j] = 999
 }
 board[7][7] = 0
+var mylist = "HH"
 updata_board();
 
 
@@ -74,15 +75,27 @@ function clearBoard(){
 		for (var i = 0; i < 15; i++)
 		for (var j = 0; j < 15; j++)
 			board[i][j] = 999;
+		mylist = "";
 		
 		if (mode == 1){
 			player = 0
+			board[7][7] = 0
+			mylist += "HH"
+
+			let temp_dir = [[1, -1, 0, 0], [0, 0, -1, 1]]
+			var change = Math.floor(Math.random() * 4)
+			board[7+temp_dir[0][change]][7+temp_dir[1][change]] = 1
+			mylist += String.fromCharCode(8+temp_dir[0][change]  + 64);
+			mylist += String.fromCharCode(8+temp_dir[1][change]  + 64);
+
 			black.removeAttribute("hidden")
 			white.setAttribute("hidden",true)
 		}
 		else{
 			player = 1
 			board[7][7] = 0
+			mylist += "HH"
+
 			white.removeAttribute("hidden")
 			black.setAttribute("hidden",true)
 		}
@@ -102,3 +115,74 @@ function modeChoose(temp){
 	mode = temp;
 	clearBoard();
 }
+
+
+
+var mylist2 = [
+	"HHGIII",
+	"HHIIIG",
+	"HHIGGG",
+	"HHGGGI",
+	"HHIIGI",
+	"HHIGII",
+	"HHGGIG",
+	"HHGIGG",
+
+	"HHGHGI",
+	"HHHIII",
+	"HHIHIG",
+	"HHHGGG",
+	"HHIHII",
+	"HHHGIG",
+	"HHGHGG",
+	"HHHIGI"
+];
+
+var mylist3 = [
+	"HHGIIIGGIJ",
+	"HHIIIGGIJG",
+	"HHIGGGIIGF",
+	"HHGGGIIGFI",
+	"HHIIGIIGGJ",
+	"HHIGIIGGJI",
+	"HHGGIGGIIF",
+	"HHGIGGIIFG",
+
+	"HHGHGIIGHJ",
+	"HHHIIIGGJH",
+	"HHIHIGGIHF",
+	"HHHGGGIIFH",
+	"HHIHIIGGHJ",
+	"HHHGIGGIJH",
+	"HHGHGGIIHF",
+	"HHHIGIIGFH",
+
+	"HHGHGIFJII",
+	"HHHIIIJJIG",
+	"HHIHIGJFGG",
+	"HHHGGGFFGI",
+	"HHIHIIJJGI",
+	"HHHGIGJFII",
+	"HHGHGGFFIG",
+	"HHHIGIFJGG",
+
+	"HHGHGIHIFG",
+	"HHHIIIIHGJ",
+	"HHIHIGHGJI",
+	"HHHGGGGHIF",
+	"HHIHIIHIJG",
+	"HHHGIGIHGF",
+	"HHGHGGHGFI",
+	"HHHIGIGHIJ"
+];
+
+var mylist4 = [
+	"HHGIIIGGIJIHHJ",
+	"HHIIIGGIJGHGJH",
+	"HHIGGGIIGFGHHF",
+	"HHGGGIIGFIHIFH",
+	"HHIIGIIGGJGHHJ",
+	"HHIGIIGGJIHIJH",
+	"HHGGIGGIIFIHHF",
+	"HHGIGGIIFGHGFH"
+];

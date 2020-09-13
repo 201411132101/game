@@ -1,0 +1,62 @@
+#include <iostream>
+using namespace std;
+
+int board[20][20];
+
+void show(string s)
+{
+    for(int i = 1; i <= 15; i++)
+        for(int j = 1; j <= 15; j++)
+            board[i][j] = 0;
+	
+    for(int i = 0; i < s.length(); i += 2)
+         board[s[i] - '@'][s[i+1] - '@'] = 1;
+	
+	board[8][8] = 8;
+
+    for(int i = 1; i <= 15; i++)
+    {
+        for(int j = 1; j <= 15; j++)
+            cout << board[i][j];
+        cout << endl;
+    }
+	cout << endl;
+}
+
+string rotate(string s)
+{
+	string ns = s;
+	for(int i = 0; i < s.length(); i += 2)
+	{
+		ns[i] = s[i+1];
+		ns[i+1] = 16 - (s[i] - '@') + '@';
+	}
+    return ns;
+}
+
+int main()
+{
+    string s1 = "HHGHGIHIFG";
+	string s2 = rotate(s1);
+	string s3 = rotate(s2);
+	string s4 = rotate(s3);
+	
+	// 上下颠倒
+    string s5 = s1;
+	for(int i = 0; i < s1.length(); i += 2)
+		s5[i] = 16 - (s1[i] - '@') + '@';
+	string s6 = rotate(s5);
+	string s7 = rotate(s6);
+	string s8 = rotate(s7);
+	
+	cout << "\"" << s1 << "\"," << endl;
+	cout << "\"" << s2 << "\"," << endl;
+    cout << "\"" << s3 << "\"," << endl;
+    cout << "\"" << s4 << "\"," << endl;
+	cout << "\"" << s5 << "\"," << endl;
+	cout << "\"" << s6 << "\"," << endl;
+	cout << "\"" << s7 << "\"," << endl;
+	cout << "\"" << s8 << "\"," << endl;
+
+    return 0;
+}

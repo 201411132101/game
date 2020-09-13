@@ -59,6 +59,8 @@ function update(event){
 	var c = Math.floor((x-350) / 40)
 	if (board[r][c] != 999) return
 	board[r][c] = player
+	mylist += String.fromCharCode(r + 65);
+	mylist += String.fromCharCode(c + 65);
 	updata_board()
 	
 	
@@ -72,14 +74,28 @@ function update(event){
 			document.getElementById("debug").innerHTML = "你赢了"
 			return false
 		}
-	})  
-	
+	})
+
+	// 检查是否在 list 里面
+	callbacks.add(function() {
+		pos = searchinlist()
+		if (pos[0] != -1) {
+			console.log('List: (%d, %d)\n', pos[0], pos[1]);
+		}
+	})
+
 	// AI
-	callbacks.add(function() {  
-		pos = AI()
+	callbacks.add(function() {
+		let newpos = AI()
+		if(pos[0] == -1) {
+			pos[0] = newpos[0];
+			pos[1] = newpos[1];
+		}
 	}) 
 	callbacks.add(function() {  
 		board[pos[0]][pos[1]] = 1 - player
+		mylist += String.fromCharCode(pos[0]  + 65);
+		mylist += String.fromCharCode(pos[1]  + 65);
 		updata_board()
 	})  
 	callbacks.add(function() {  
@@ -111,6 +127,7 @@ function update(event){
 			}
 			mat += "<br/>";
 		}
+		mat += mylist;
 		document.getElementById("debug").innerHTML = mat;
 	})  
 	callbacks.fire();

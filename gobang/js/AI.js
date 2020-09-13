@@ -96,7 +96,7 @@ function get_score(r, c, player){
 }
 
 
-function AI(){	
+function AI(){
 	var max_score = 0;
 	var res_r = 7;
 	var res_c = 7;
@@ -126,10 +126,33 @@ function AI(){
 		}) 
 		callbacks.fire();
 	}
-	console.log('AI: (%d, %d) -- %d\n', res_r, res_c, max_score);
+	console.log('AI: (%d, %d) -- Score: %d\n', res_r, res_c, max_score);
 	
 	return [res_r, res_c];
 }
 
-
-
+function searchinlist(){
+	if(mylist.length == 4){
+		for (let i = 0; i < mylist2.length; i++){
+			//console.log(mylist2[i].substring(0, 4))
+			if (mylist == mylist2[i].substring(0, 4)){
+				return [mylist2[i].charCodeAt(4) - 65, mylist2[i].charCodeAt(5) - 65];
+			}
+		}
+	}
+	if(mylist.length == 8){
+		for (let i = 0; i < mylist3.length; i++){
+			if (mylist == mylist3[i].substring(0, 8)){
+				return [mylist3[i].charCodeAt(8) - 65, mylist3[i].charCodeAt(9) - 65];
+			}
+		}
+	}
+	if(mylist.length == 12){
+		for (let i = 0; i < mylist4.length; i++){
+			if (mylist == mylist4[i].substring(0, 12)){
+				return [mylist4[i].charCodeAt(12) - 65, mylist4[i].charCodeAt(13) - 65];
+			}
+		}
+	}
+	return [-1, -1];
+}
