@@ -127,7 +127,8 @@ function update(event){
 			}
 			mat += "<br/>";
 		}
-		mat += mylist;
+		mat += mylist.substring(0, 8) + "<br/>";
+                                mat += mylist.substring(8, 16) + "<br/>";
 		document.getElementById("debug").innerHTML = mat;
 	})  
 	callbacks.fire();

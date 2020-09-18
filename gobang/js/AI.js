@@ -86,7 +86,9 @@ function get_score(r, c, player){
         }
         
         var length = Math.min(4, length + Math.max(ex_length_a, ex_length_b))
-        if (Math.max(ex_length_a, ex_length_b) > 0)
+        if (Math.max(ex_length_a, ex_length_b) == 0)
+            score += 2 * Math.pow(10, length-1)
+        else
             score += Math.pow(10, length-1)
     }
 
