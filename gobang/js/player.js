@@ -129,6 +129,7 @@ function update(event){
 		}
 		mat += mylist.substring(0, 8) + "<br/>";
                                 mat += mylist.substring(8, 16) + "<br/>";
+                                mat += mylist.substring(16, 24) + "<br/>";
 		document.getElementById("debug").innerHTML = mat;
 	})  
 	callbacks.fire();
