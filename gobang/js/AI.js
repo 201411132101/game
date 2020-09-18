@@ -154,5 +154,12 @@ function searchinlist(){
 			}
 		}
 	}
+	if(mylist.length == 16){
+		for (let i = 0; i < mylist5.length; i++){
+			if (mylist == mylist5[i].substring(0, 16)){
+				return [mylist5[i].charCodeAt(16) - 65, mylist5[i].charCodeAt(17) - 65];
+			}
+		}
+	}
 	return [-1, -1];
 }
