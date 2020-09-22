@@ -57,6 +57,8 @@ function get_score(r, c, player){
             else
                 length -= 1
         }
+        else
+               length -= 1
 
         var ex_length_b = 0
         nnr = ends_b[0] - rm
@@ -84,6 +86,8 @@ function get_score(r, c, player){
             else
                 length -= 1
         }
+        else
+               length -= 1
         
         var length = Math.min(4, length + Math.max(ex_length_a, ex_length_b))
         if (Math.max(ex_length_a, ex_length_b) == 0)
@@ -133,31 +137,31 @@ function AI(){
 
 function searchinlist(){
     if(mylist.length == 4){
-        for (let i = 0; i < mylist2.length; i++){
-            //console.log(mylist2[i].substring(0, 4))
-            if (mylist == mylist2[i].substring(0, 4)){
-                return [mylist2[i].charCodeAt(4) - 65, mylist2[i].charCodeAt(5) - 65];
+        for (let i = 0; i < mylist4.length; i++){
+            //console.log(mylist4[i].substring(0, 4))
+            if (mylist == mylist4[i].substring(0, 4)){
+                return [mylist4[i].charCodeAt(4) - 65, mylist4[i].charCodeAt(5) - 65];
             }
         }
     }
     if(mylist.length == 8){
-        for (let i = 0; i < mylist3.length; i++){
-            if (mylist == mylist3[i].substring(0, 8)){
-                return [mylist3[i].charCodeAt(8) - 65, mylist3[i].charCodeAt(9) - 65];
+        for (let i = 0; i < mylist8.length; i++){
+            if (mylist == mylist8[i].substring(0, 8)){
+                return [mylist8[i].charCodeAt(8) - 65, mylist8[i].charCodeAt(9) - 65];
             }
         }
     }
     if(mylist.length == 12){
-        for (let i = 0; i < mylist4.length; i++){
-            if (mylist == mylist4[i].substring(0, 12)){
-                return [mylist4[i].charCodeAt(12) - 65, mylist4[i].charCodeAt(13) - 65];
+        for (let i = 0; i < mylist12.length; i++){
+            if (mylist == mylist12[i].substring(0, 12)){
+                return [mylist12[i].charCodeAt(12) - 65, mylist12[i].charCodeAt(13) - 65];
             }
         }
     }
     if(mylist.length == 16){
-        for (let i = 0; i < mylist5.length; i++){
-            if (mylist == mylist5[i].substring(0, 16)){
-                return [mylist5[i].charCodeAt(16) - 65, mylist5[i].charCodeAt(17) - 65];
+        for (let i = 0; i < mylist16.length; i++){
+            if (mylist == mylist16[i].substring(0, 16)){
+                return [mylist16[i].charCodeAt(16) - 65, mylist16[i].charCodeAt(17) - 65];
             }
         }
     }
