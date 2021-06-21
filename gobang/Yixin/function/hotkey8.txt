@@ -1,0 +1,7 @@
+5
+
+command on
+info checkmate 2
+command off
+thinking start
+

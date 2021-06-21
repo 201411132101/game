@@ -1,0 +1,8 @@
+201
+gtk-execute
+
+command on
+info checkmate 1
+command off
+thinking start
+

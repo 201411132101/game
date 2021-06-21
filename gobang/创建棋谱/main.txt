@@ -36,7 +36,8 @@ string rotate(string s)
 
 int main()
 {
-    string s1 = "HHHIIIGGJHIJKG";
+    string s1 = "HHHIIIGGJHGHHJGKIJ";
+    show(s1);
     if(s1.length()%2==1)
         return 0;
 	
